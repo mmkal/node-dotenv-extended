@@ -7,7 +7,9 @@
   "types": "dotenv-extended.d.ts",
   "bin": "lib/bin/index.js",
   "scripts": {
-    "test": "gulp unittest",
+    "test": "npm run test:unit && npm run test:bin",
+    "test:unit": "gulp unittest",
+    "test:bin": "node lib/bin gulp lint",
     "coveralls": "cat ./coverage/lcov.info | coveralls",
     "lint": "gulp lint",
     "prepublish": "gulp build"
